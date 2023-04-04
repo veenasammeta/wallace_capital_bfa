@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}OUTPUT{% endblock %}
+
+{% block content %}
+<div class="center" >
+    <h1><img src="{{url_for('static', filename='images/wc.jpeg')}}" alt="logo" width="200" height="200" /> Business Funding Analysis</h1>
+    </div>
+    <div>
+
+<div class="card mt-4 ">
+        <div class="text-center">
+            <h2>BFA REPORT IS COMPLETE</h2>
+        </div>
+        <button class="btn btn-link">
+            <a href="/CombinedReportdownload" target="_blank" >Download Combined Report</a>
+        </button>
+        <!-- <button class="btn btn-link">
+            <a href="/IndividualReportdownload" target="_blank" >Download Indivual Report</a>
+        </button> -->
+
+        <button class="btn btn-link">
+            <a href="/" >NEW CLIENT</a>
+        </button>
+
+</div>
+{% endblock %}

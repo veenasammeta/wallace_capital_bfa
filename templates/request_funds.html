@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>WallaceCapitalBFA</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+	</head>
+    <body>
+        <div class="center" >
+        <h1><img src="{{url_for('static', filename='images/wc.jpeg')}}" alt="logo" width="100" height="100" /> Business Funding Analysis</h1>
+        </div>
+
+        <br>
+        <form action="request_funds" method="post" >
+                            
+     
+            <div class="panel panel-default">
+            <div class="panel-body">
+		<div class="bfa-wrapper">
+            <div class="row">
+            <div class="col-sm-3 nopadding">                        
+                <div class="form-group">
+                    <label>Personal Monthly Income</label>
+                <input type="number"  class="form-control" id="personal_income" name="personal_income" value={{analysis_dict.total_personal_monthly_income}} placeholder="Monthly Personal Income Fund">
+                </div>
+                </div>
+                <div class="col-sm-3 nopadding">   
+                    <label>Business Monthly Income</label>                     
+                    <div class="form-group">
+                    <input type="number" step=".01"  class="form-control" id="business_income" name="business_income" value={{analysis_dict.total_business_monthly_income}} placeholder="Monthly Business Income Fund">
+                    </div>
+                    </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 nopadding">  
+                    <label>Personal Monthly Debt</label>                      
+                    <div class="form-group">
+                    <input type="number" step=".01"  class="form-control" id="total_person_monthly_debt" name="total_person_monthly_debt" value={{analysis_dict.total_person_monthly_debt}} placeholder="Monthly Personal Debt Fund">
+                    </div>
+                    </div>
+                    <div class="col-sm-3 nopadding">     
+                        <label>Business Monthly Debt</label>                   
+                        <div class="form-group">
+                        <input type="number" step=".01"  class="form-control" id="total_business_monthly_debt" name="total_business_monthly_debt" value={{analysis_dict.total_business_monthly_debt}} placeholder="Monthly Business Debt Fund">
+                        </div>
+                        </div>
+                </div>
+        </div>
+            </div>
+            <div class="panel-body col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                <div id="business_fields">
+                    <h2>
+                        <label>Requested Funds Information</label>
+                    </h2>
+                    </div>
+            
+                </br>
+
+                    <div class="row">
+                  
+                <div class="col-sm-3 nopadding"> 
+                    <label> Requested Fund</label>                       
+                <div class="form-group">
+                <input type="number"  class="form-control" id="RequestedFund" name="RequestedFund" value={{form_data.RequestedFund}} placeholder="Requested Fund">
+                </div>
+                </div>
+
+                <div class="col-sm-3 nopadding"> 
+                    <label> Prime Rate</label>
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="PrimeRate" name="PrimeRate" value={{form_data.PrimeRate}} placeholder="Prime Rate">
+                </div>
+                </div>
+                <div class="col-sm-3 nopadding">
+                    <label> Additional Rate </label>
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="AdditionalRate" name="AdditionalRate" value={{form_data.AdditionalRate}} placeholder="Additional Rate">
+                </div>
+                </div>
+                <div class="col-sm-3 nopadding">
+                    <label> Tenure </label>
+                    <input type="number" class="form-control" id="tenure" name="tenure" value={{form_data.tenure}} placeholder="Tenure">
+                </div>
+
+                    </div>
+            <div class="clear">
+
+            </div>  
+            </div>
+            
+            </div>
+            </div>
+            <div class="row center" >
+            <div class="center">
+                <input class="btn btn-primary" type="submit" name="Check" value="Check" >
+                </div>
+            </div>
+        </br>
+        </div>
+   
+        {% if result_data.estimate_monthly_pmt != None %}
+      
+            <div class="panel-body col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row ">
+                            <div class="col-sm-9 nopadding">
+                            {% if result_data.is_eligible == 1 %}
+                            <h4> <label style="color:green;" >&#10003; Eligible for this Loan</label></h4>
+                            {% else %}
+                            <h4><label style="color:red;" >&#x2718; Not Eligible for this Loan</label></h4>
+                            {% endif %}
+                        </div>
+            
+                    </div>
+
+                <div class="row">
+                    <div class="col-sm-4 nopadding">
+                     <h4><label>Your Current Monthly loan limit: </label></h4>
+                    </div>
+                    <div class="col-sm-4 nopadding">
+                     ${{result_data.loan_limit}}
+                    </div>
+                    </div>
+                <div class="row">
+                <div class="col-sm-4 nopadding">
+                <h4> <label> Estimated Monthly payment amount to be paid: </label></h4>
+            </div>
+            <div class="col-sm-4 nopadding">
+             ${{result_data.estimate_monthly_pmt}}
+            </div>
+        </div>
+            <div class="row">
+            <div class="col-sm-4 nopadding">
+             <h4><label>Estimated GDSCR: </label></h4>
+            </div>
+            <div class="col-sm-4 nopadding">
+             {{result_data.gdscr}}
+            </div>
+            </div>
+        </div>
+            </div>
+ 
+        {% endif %}
+        <div class="row center">
+       <div class="center">
+            <input class="btn btn-primary" type="submit" name="Generate" value="Generate" >
+            </div>
+        </div>
+        </form>  
+        
+    </body>
+</html>
+
+

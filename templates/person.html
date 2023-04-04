@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>WallaceCapitalBFA</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+	</head>
+    <body>
+        <div class="center" >
+        <h1><img src="{{url_for('static', filename='images/wc.jpeg')}}" alt="logo" width="70" height="70" /> Business Funding Analysis</h1>
+        </div>
+        <div>
+
+        </div>
+
+        <br>
+        <form action="page" method="post">
+    
+
+		<div class="bfa-wrapper">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                <div id="personal_fields">
+                    <h2>
+                    <label> Personal Information</label>
+                    </h2>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-3 nopadding">
+                        <div class="form-group">
+                        <input type="text" class="form-control" id="Name" name="Name" value="" placeholder="Name" required>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-3 nopadding">
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="Experian" name="Experian" value="" placeholder="Experian">
+                </div>
+            </div>
+            <div class="col-sm-3 nopadding">
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="Equifax" name="Equifax" value="" placeholder="Equifax">
+                </div>
+            </div>
+
+            <div class="col-sm-3 nopadding">
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="Transunion" name="Transunion" value="" placeholder="Transunion">
+                </div>
+            </div>
+                    </div>
+     
+                    <div class="bfa-wrapper">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                            <div id="personal_credit_fields">
+                                <div class="row">
+                                    <div class="col-sm-3 nopadding">
+                                    <label> personal credit Information</label>
+                                    </div>
+                                <div class="col-sm-3 nopadding">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-success" type="button"  onclick="personal_credit_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                                        </div>
+                                </div>
+                                    </div>
+
+                                </div>
+                            </br>
+                                <div class="row">
+                                    <div class="col-sm-3 nopadding">
+                                        <div class="form-group">
+                                        <div class="input-group">
+                                            <select class="form-control" id="creditYear-1" name="creditYear-1">
+                                            
+                                            <option value="">Year</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2018">2019</option>
+                                            <option value="2018">2020</option>
+                                            <option value="2018">2021</option>
+                                            <option value="2018">2022</option>
+                                            <option value="2018">2023</option>
+                                            </select>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="AGI-1" name="AGI-1" value="" placeholder="AGI">
+                            </div>
+                        </div>
+                        <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="ScheduleC-1" name="ScheduleC-1" value="" placeholder="ScheduleC">
+                            </div>
+                        </div>
+                                </div>
+                            <div class="row">
+            
+                        <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="K-1s-1" name="K-1s-1" value="" placeholder="K-1s Income (Corp)">
+                            </div>
+                        </div>
+                  
+                        <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="Compensation-1" name="Compensation-1" value="" placeholder="Compensation from Officers">
+                            </div>
+                        </div>
+
+                            </div>
+                       
+                            <div class="row">
+            
+                                <div class="col-sm-3 nopadding">
+                                    <div class="form-group">
+                                    <input type="number" step=".01"  class="form-control" id="Deduction-1" name="Deduction-1" value="" placeholder="Deduction">
+                                    </div>
+                                </div>
+                            
+                                    </div>
+                      
+                        <div class="clear">
+            
+                        </div>  
+                        </div>
+                        </div>
+                    </div>
+            
+                    <div class="bfa-wrapper">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                            <div id="personal_credit_info">
+                                    <label> Personal Debt Information</label>
+                                </div>
+                        
+                            </br>
+                              
+                         
+                                <div class="row">
+                                    <div class="col-sm-3 nopadding">
+                                    <label>  Mortgage </label>
+                                    </div>
+                                
+                                <div class="col-sm-3 nopadding">
+                                <div class="input-group-btn">
+                            <button class="btn btn-success" type="button"  onclick="personal_mortgage_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>            
+                                </div>
+                                </div>
+                            </div>
+                        </br>
+                               
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                        <div id="personal_mortgage_fields">
+                                               
+                                            </div>
+
+                                <div class="row">
+                                <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="Total owed" name="MortgageOwed-1" value="" placeholder="Mortgage Owed">
+                            </div>
+                        </div>
+                          
+
+                        <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="Monthly Payments" name="MortgageMonthlypayment-1" value="" placeholder="Monthly Payment">
+                            </div>
+                        </div>
+                  
+                                </div>
+                                <div class="clear">
+            
+                                </div> 
+                                        </div>
+                                        </div>
+                           
+                                        <div class="row">
+                                            <div class="col-sm-3 nopadding">
+                                            <label>  Auto </label>
+                                            </div>
+                                        
+                                        <div class="col-sm-3 nopadding">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-success" type="button"  onclick="personal_auto_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                </br>
+
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                            <div id="personal_auto_fields">
+                                                </div>
+                                        
+                                                <div class="row">
+            
+                                                    <div class="col-sm-3 nopadding">
+                                                        <div class="form-group">
+                                                        <input type="number" step=".01"  class="form-control" id="AutoOwed-1" name="AutoOwed-1" value="" placeholder=" Total Owed">
+                                                        </div>
+                                                    </div>
+                                              
+                                                    <div class="col-sm-3 nopadding">
+                                                        <div class="form-group">
+                                                        <input type="number" step=".01"  class="form-control" id="Automonthlypayment-1" name="Automonthlypayment-1" value="" placeholder="Monthly Payment">
+                                                        </div>
+                                                    </div>
+
+                            
+                                                        </div>
+
+                                                        <div class="clear">
+            
+                                                        </div>
+                                        </div>
+                                            </div>
+
+                                            
+                                            <div class="row">
+                                                <div class="col-sm-3 nopadding">
+                                                <label>  Revolving </label>
+                                                </div>
+                                            
+                                            <div class="col-sm-3 nopadding">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-success" type="button"  onclick="personal_revolving_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                    </br>
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                <div id="personal_revolving_fields">
+                                                    </div>
+
+
+
+                                            <div class="row">
+            
+                                                <div class="col-sm-3 nopadding">
+                                                    <div class="form-group">
+                                                    <input type="number" step=".01"  class="form-control" id="RevolvingOwed-1" name="RevolvingOwed-1" value="" placeholder=" Total Owed">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-3 nopadding">
+                                                    <div class="form-group">
+                                                    <input type="number" step=".01"  class="form-control" id="Revolvingmonthlypayment-1" name="Revolvingmonthlypayment-1" value="" placeholder="Monthly Payment">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3 nopadding">
+                                                    <div class="form-group">
+                                                    <input type="number" step=".01"  class="form-control" id="Revolvingcreditlimit-1" name="Revolvingcreditlimit-1" value="" placeholder="Credit Limit">
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+
+                                            <div class="clear">
+            
+                                            </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-sm-3 nopadding">
+                                                <label>  Education </label>
+                                                </div>
+                                            
+                                            <div class="col-sm-3 nopadding">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-success" type="button"  onclick="personal_education_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                                            </div>
+                                            </div>
+                                        </div>
+    
+
+                                    </br>
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                <div id="personal_education_fields">
+                                                    </div>
+
+                                            <div class="row">
+            
+                                                <div class="col-sm-3 nopadding">
+                                                    <div class="form-group">
+                                                    <input type="number" step=".01"  class="form-control" id="EducationAmountOwed-1" name="EducationOwed-1" value="" placeholder=" Total Owed">
+                                                    </div>
+                                                </div>
+                                          
+                                                <div class="col-sm-3 nopadding">
+                                                    <div class="form-group">
+                                                    <input type="number" step=".01"  class="form-control" id="Educationmonthlypayment-1" name="Educationmonthlypayment-1" value="" placeholder="Monthly Payment">
+                                                    </div>
+                                                </div>
+                                             
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3 nopadding">
+                                                <label>  Personal Bank Statement Information </label>
+                                                </div>
+                                            
+                                            <div class="col-sm-3 nopadding">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-success" type="button"  onclick="personal_bank_statement_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                    </br>
+
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                <div id="personal_bank_statement_fields">
+                                      
+                                                   
+                                                    </div>
+                                                    
+                                                  <div class="row">
+                                                            <div class="col-sm-3 nopadding">
+                                                          
+                                                                <div class="input-group">
+                                                                    <div class="form-group">
+                                                                    <select class="form-control" id="pBankStementYear-1" name="pBankStementYear-1">
+                                                                    
+                                                                    <option value="">Year</option>
+                                                                    <option value="2015">2015</option>
+                                                                    <option value="2016">2016</option>
+                                                                    <option value="2017">2017</option>
+                                                                    <option value="2018">2018</option>
+                                                                    <option value="2018">2019</option>
+                                                                    <option value="2018">2020</option>
+                                                                    <option value="2018">2021</option>
+                                                                    <option value="2018">2022</option>
+                                                                    <option value="2018">2023</option>
+                                                                    </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                    
+                                                            <div class="col-sm-3 nopadding">
+                                                            
+                                                                <div class="form-group">
+                                                                <div class="input-group">
+                                                                    <select class="form-control" id="pBankStementMonth-1" name="pBankStementMonth-1">
+                                                                    
+                                                                    <option value="">Month</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="6">6</option>
+                                                                    <option value="7">7</option>
+                                                                    <option value="8">8</option>
+                                                                    <option value="9">9</option>
+                                                                    <option value="10">10</option>
+                                                                    <option value="11">11</option>
+                                                                    <option value="12">12</option>
+                                                                    </select>
+                                                                </div>
+                                                                </div>
+                                    </div>       
+                                
+                                    
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 nopadding">
+                                            <div class="form-group">
+                                            <input type="text" class="form-control" id="PersonalBankName-1" name="PersonalBankName-1" value="" placeholder="Bank Name">
+                                            </div>
+                                        </div>
+                                    <div class="col-sm-3 nopadding">
+                                        <div class="form-group">
+                                        <input type="text" class="form-control" id="PLast4Digits-1" name="PLast4Digits-1" value="" placeholder="Last 4 Digits">
+                                        </div>
+                                    </div>
+                    
+                                    </div>
+                                    
+                                                            <div class="row">
+                                                                <div class="col-sm-3 nopadding">
+                                                                    <div class="form-group">
+                                                                    <input type="number" step=".01"  class="form-control" id="pdeposit-1" name="pdeposit-1" value="" placeholder="Deposit">
+                                                                    </div>
+                                                                </div>
+                                    
+                                                                <div class="col-sm-3 nopadding">
+                                                                    <div class="form-group">
+                                                                    <input type="number" step=".01"  class="form-control" id="pwithdrawal-1" name="pwithdrawal-1" value="" placeholder="With Drawal">
+                                                                    </div>
+                                                                </div>
+                                    
+                                                                <div class="col-sm-3 nopadding">
+                                                                    <div class="form-group">
+                                                                    <input type="number" step=".01"  class="form-control" id="pBalance-1" name="pBalance-1" value="" placeholder="Balance">
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                    
+                                    
+                                                            
+                                                        
+                                                   
+                                                    <div class="clear">
+            
+                                                    </div>
+                                                    
+
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                            
+                                          
+                                </div>
+                           
+                         
+
+                          
+                            
+                  
+                       
+
+                            </div>
+                            
+                                <div class="center">
+                                <input class="btn btn-primary" type="submit" name="AddAPerson" value="Add Person" style="float:right ; margin: 5px;"" >
+                                <input class="btn btn-success" type="submit" name="Next" value="Next" style="float:right ; margin: 5px;" >
+                                    
+                                </div>
+                            
+                           
+                                    </div>   
+                   
+                        </div>
+                        
+                        </div>
+                        
+                    </div>
+                   
+
+            </div>
+         
+        </div>
+        </form>
+       
+    </body>
+    <script>
+        var var1 = 1, pvar=1;
+        var varbbnkiter=1, varpersiter=1;
+        var iter = 1;
+        var pcredititer = 1;
+        var pmortiter=1,varauto = 1 , varrevolving=1, vareducation=1;
+
+
+        function personal_credit_fields() {
+        
+            pcredititer++;
+        var objTo = document.getElementById('personal_credit_fields')
+        var divtest = document.createElement("div");
+        divtest.setAttribute("class", "form-group removeclass"+pcredititer);
+        var rdiv = 'removeclass'+pcredititer;
+        divtest.innerHTML = ` 
+        <div class="row">
+                                    <div class="col-sm-3 nopadding">
+                                        <div class="form-group">
+                                        <div class="input-group">
+                                            <select class="form-control" id="creditYear-${pcredititer}" name="creditYear-${pcredititer}">
+                                            
+                                            <option value="">Year</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2018">2019</option>
+                                            <option value="2018">2020</option>
+                                            <option value="2018">2021</option>
+                                            <option value="2018">2022</option>
+                                            <option value="2018">2023</option>
+                                            </select>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="AGI-${pcredititer}" name="AGI-${pcredititer}" value="" placeholder="AGI">
+                            </div>
+                        </div>
+                        <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="ScheduleC-${pcredititer}" name="ScheduleC-${pcredititer}" value="" placeholder="ScheduleC">
+                            </div>
+                        </div>
+                                </div>
+                            <div class="row">
+            
+                        <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="K-1s-${pcredititer}" name="K-1s-${pcredititer}" value="" placeholder="K-1s Income (Corp)">
+                            </div>
+                        </div>
+                  
+                        <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="Compensation-${pcredititer}" name="Compensation-${pcredititer}" value="" placeholder="Compensation from Officers">
+                            </div>
+                        </div>
+
+                            </div>
+                       
+                            <div class="row">
+            
+                                <div class="col-sm-3 nopadding">
+                                    <div class="form-group">
+                                    <input type="number" step=".01"  class="form-control" id="Deduction-${pcredititer}" name="Deduction-${pcredititer}" value="" placeholder="Deduction">
+                                    </div>
+                            
+                                </div>
+                                   
+                    </div>   
+                </div>         
+                        <div class="clear">
+            
+                        </div> 
+        `;
+        objTo.appendChild(divtest)
+        }
+        function remove_personal_credit_fields(rid) {
+            $('.removeclass'+rid).remove();
+        }
+
+        function personal_mortgage_fields() {
+        
+        pmortiter++;
+    var objTo = document.getElementById('personal_mortgage_fields')
+    var divtest = document.createElement("div");
+    divtest.setAttribute("class", "form-group removeclass"+pmortiter);
+    var rdiv = 'removeclass'+pmortiter;
+    divtest.innerHTML = ` 
+    <div class="row">
+    <div class="col-sm-3 nopadding">
+<div class="form-group">
+<input type="number" step=".01"  class="form-control" id="Totalowed-${pmortiter}" name="MortgageOwed-${pmortiter}" value="" placeholder="Mortgage Owed">
+</div>
+</div>
+
+
+<div class="col-sm-3 nopadding">
+<div class="form-group">
+<input type="number" step=".01"  class="form-control" id="MonthlyPayments-${pmortiter}" name="MortgageMonthlypayment-${pmortiter}" value="" placeholder="Monthly Payment">
+</div>
+</div>
+    </div>
+    <div class="clear">
+
+    </div> 
+    `;
+    objTo.appendChild(divtest)
+        }
+        function remove_personal_mortgage_fields(rid) {
+            $('.removeclass'+rid).remove();
+        }
+
+        function personal_auto_fields() {
+        
+        varauto++;
+    var objTo = document.getElementById('personal_auto_fields')
+    var divtest = document.createElement("div");
+    divtest.setAttribute("class", "form-group removeclass"+pmortiter);
+    var rdiv = 'removeclass'+pmortiter;
+    divtest.innerHTML = ` 
+    <div class="row">
+            
+            <div class="col-sm-3 nopadding">
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="AutoOwed-${varauto}" name="AutoOwed-${varauto}" value="" placeholder=" Total Owed">
+                </div>
+            </div>
+        
+            <div class="col-sm-3 nopadding">
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="Automonthlypayment-${varauto}" name="Automonthlypayment-${varauto}" value="" placeholder="Monthly Payment">
+                </div>
+            </div>
+           
+ 
+                </div>
+    `;
+    objTo.appendChild(divtest)
+        }
+        function remove_personal_auto_fields(rid) {
+            $('.removeclass'+rid).remove();
+        }
+        function personal_revolving_fields()
+        {
+            varrevolving++;
+            var objTo = document.getElementById('personal_revolving_fields')
+            var divtest = document.createElement("div");
+            divtest.setAttribute("class", "form-group removeclass"+varrevolving);
+            var rdiv = 'removeclass'+varrevolving;
+            divtest.innerHTML = ` 
+            <div class="row">
+            
+            <div class="col-sm-3 nopadding">
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="RevolvingOwed-${varrevolving}" name="RevolvingOwed-${varrevolving}" value="" placeholder=" Total Owed">
+                </div>
+            </div>
+
+            <div class="col-sm-3 nopadding">
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="Revolvingmonthlypayment-${varrevolving}" name="Revolvingmonthlypayment-${varrevolving}" value="" placeholder="Monthly Payment">
+                </div>
+            </div>
+            <div class="col-sm-3 nopadding">
+                    <div class="form-group">
+                        <input type="number" step=".01"  class="form-control" id="Revolvingcreditlimit-${varrevolving}" name="Revolvingcreditlimit-${varrevolving}" value="" placeholder="Credit Limit">
+                    </div>
+            </div>
+    
+
+        </div>
+
+        <div class="clear">
+
+        </div>
+            `;
+            objTo.appendChild(divtest)
+        }
+        function remove_personal_revolving_fields(rid) {
+            $('.removeclass'+rid).remove();
+        }
+        function personal_education_fields()
+        {
+            vareducation++;
+            var objTo = document.getElementById('personal_education_fields')
+            var divtest = document.createElement("div");
+            divtest.setAttribute("class", "form-group removeclass"+vareducation);
+            var rdiv = 'removeclass'+vareducation;
+            divtest.innerHTML = ` 
+            <div class="row">
+            
+            <div class="col-sm-3 nopadding">
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="EducationAmountOwed-${vareducation}" name="EducationOwed-${vareducation}" value="" placeholder=" Total Owed">
+                </div>
+            </div>
+      
+            <div class="col-sm-3 nopadding">
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="Educationmonthlypayment-${vareducation}" name="Educationmonthlypayment-${vareducation}" value="" placeholder="Monthly Payment">
+                </div>
+            </div>
+        
+                </div>
+            `;
+            objTo.appendChild(divtest)
+        }
+        function remove_personal_education_fields(rid) {
+            $('.removeclass'+rid).remove();
+        }
+        function personal_bank_statement_fields()
+        {
+            varpersiter++;
+            var objTo = document.getElementById('personal_bank_statement_fields')
+            var divtest = document.createElement("div");
+            divtest.setAttribute("class", "form-group removeclass"+varpersiter);
+            var rdiv = 'removeclass'+varpersiter;
+            divtest.innerHTML = ` 
+                                  
+            <div class="row">
+                                                            <div class="col-sm-3 nopadding">
+                                                          
+                                                                <div class="input-group">
+                                                                    <div class="form-group">
+                                                                    <select class="form-control" id="pBankStementYear-${varpersiter}" name="pBankStementYear-${varpersiter}">
+                                                                    
+                                                                    <option value="">Year</option>
+                                                                    <option value="2015">2015</option>
+                                                                    <option value="2016">2016</option>
+                                                                    <option value="2017">2017</option>
+                                                                    <option value="2018">2018</option>
+                                                                    <option value="2018">2019</option>
+                                                                    <option value="2018">2020</option>
+                                                                    <option value="2018">2021</option>
+                                                                    <option value="2018">2022</option>
+                                                                    <option value="2018">2023</option>
+                                                                    </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                    
+                                                            <div class="col-sm-3 nopadding">
+                                                            
+                                                                <div class="form-group">
+                                                                <div class="input-group">
+                                                                    <select class="form-control" id="pBankStementMonth-${varpersiter}" name="pBankStementMonth-${varpersiter}">
+                                                                    
+                                                                    <option value="">Month</option>
+                                                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                                                    </select>
+                                                                </div>
+                                                                </div>
+                                    </div>       
+                                    
+                                    
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 nopadding">
+                                            <div class="form-group">
+                                            <input type="text" class="form-control" id="PersonalBankName-${varpersiter}" name="PersonalBankName-${varpersiter}" value="" placeholder="Bank Name">
+                                            </div>
+                                        </div>
+                                    <div class="col-sm-3 nopadding">
+                                        <div class="form-group">
+                                        <input type="text" class="form-control" id="PLast4Digits-${varpersiter}" name="PLast4Digits-${varpersiter}" value="" placeholder="Last 4 Digits">
+                                        </div>
+                                    </div>
+                    
+                                    </div>
+                                    
+                                                            <div class="row">
+                                                                <div class="col-sm-3 nopadding">
+                                                                    <div class="form-group">
+                                                                    <input type="number" step=".01"  class="form-control" id="pdeposit-${varpersiter}" name="pdeposit-${varpersiter}" value="" placeholder="Deposit">
+                                                                    </div>
+                                                                </div>
+                                    
+                                                                <div class="col-sm-3 nopadding">
+                                                                    <div class="form-group">
+                                                                    <input type="number" step=".01"  class="form-control" id="pwithdrawal-${varpersiter}" name="pwithdrawal-${varpersiter}" value="" placeholder="With Drawal">
+                                                                    </div>
+                                                                </div>
+                                    
+                                                                <div class="col-sm-3 nopadding">
+                                                                    <div class="form-group">
+                                                                    <input type="number" step=".01"  class="form-control" id="pBalance-${varpersiter}" name="pBalance-${varpersiter}" value="" placeholder="Balance">
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>                                                        
+                                                   
+                                                    <div class="clear">
+            
+                                                    </div>
+            `;
+            objTo.appendChild(divtest)
+        }
+        function remove_personal_bank_statement_fields(rid) {
+            $('.removeclass'+rid).remove();
+        }
+        function personal_fields()
+        {
+            pvar++;
+            var objTo = document.getElementById('personal_fields')
+            var divtest = document.createElement("div");
+            divtest.setAttribute("class", "form-group removeclass"+pvar);
+            var rdiv = 'removeclass'+pvar;
+            divtest.innerHTML = ` 
+            <div class="bfa-wrapper">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                <div id="business_debt_fields">
+                    <label> Personal Information</label>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-3 nopadding">
+                        <div class="form-group">
+                        <input type="text" class="form-control" id="Name" name="Name" value="" placeholder="Name">
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-3 nopadding">
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="Experian" name="Experian" value="" placeholder="Experian">
+                </div>
+            </div>
+            <div class="col-sm-3 nopadding">
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="Equifax" name="Equifax" value="" placeholder="Equifax">
+                </div>
+            </div>
+
+            <div class="col-sm-3 nopadding">
+                <div class="form-group">
+                <input type="number" step=".01"  class="form-control" id="Transunion" name="Transunion" value="" placeholder="Transunion">
+                </div>
+            </div>
+                    </div>
+     
+                    <div class="bfa-wrapper">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                            <div id="personal_credit_fields">
+                                    <label> personal credit Information</label>
+                                </div>
+                            </br>
+                                <div class="row">
+                                    <div class="col-sm-3 nopadding">
+                                        <div class="form-group">
+                                        <div class="input-group">
+                                            <select class="form-control" id="creditYear-1" name="creditYear-1">
+                                            
+                                            <option value="">Year</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2018">2019</option>
+                                            <option value="2018">2020</option>
+                                            <option value="2018">2021</option>
+                                            <option value="2018">2022</option>
+                                            <option value="2018">2023</option>
+                                            </select>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="AGI-1" name="AGI-1" value="" placeholder="AGI">
+                            </div>
+                        </div>
+                        <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="ScheduleC-1" name="ScheduleC-1" value="" placeholder="ScheduleC">
+                            </div>
+                        </div>
+                                </div>
+                            <div class="row">
+            
+                        <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="K-1s-1" name="K-1s-1" value="" placeholder="K-1s Income (Corp)">
+                            </div>
+                        </div>
+                  
+                        <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="Compensation-1" name="Compensation-1" value="" placeholder="Compensation from Officers">
+                            </div>
+                        </div>
+
+                            </div>
+                       
+                            <div class="row">
+            
+                                <div class="col-sm-3 nopadding">
+                                    <div class="form-group">
+                                    <input type="number" step=".01"  class="form-control" id="Deduction-1" name="Deduction-1" value="" placeholder="Deduction">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 nopadding">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-success" type="button"  onclick="personal_credit_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                                    </div>
+                            </div>
+                            
+                                    </div>
+                      
+                        <div class="clear">
+            
+                        </div>  
+                        </div>
+                        </div>
+                    </div>
+            
+                    <div class="bfa-wrapper">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                            <div id="personal_credit_info">
+                                    <label> Personal Debt Information</label>
+                                </div>
+                        
+                            </br>
+                              
+                              
+                               
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                        <div id="personal_mortgage_fields">
+                                               
+                                            </div>
+
+                                <div class="row">
+                                <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="Total owed" name="MortgageOwed-1" value="" placeholder="Mortgage Owed">
+                            </div>
+                        </div>
+                          
+
+                        <div class="col-sm-3 nopadding">
+                            <div class="form-group">
+                            <input type="number" step=".01"  class="form-control" id="Monthly Payments" name="MortgageMonthlypayment-1" value="" placeholder="Monthly Payment">
+                            </div>
+                        </div>
+                   
+                                </div>
+                                <div class="clear">
+            
+                                </div> 
+                                        </div>
+                                        </div>
+                           
+                                        <div class="row">
+                                            <label>Auto</label>
+                                        </div>
+
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                            <div id="personal_auto_fields">
+                                                </div>
+                                        
+                                                <div class="row">
+            
+                                                    <div class="col-sm-3 nopadding">
+                                                        <div class="form-group">
+                                                        <input type="number" step=".01"  class="form-control" id="AutoOwed-1" name="AutoOwed-1" value="" placeholder=" Total Owed">
+                                                        </div>
+                                                    </div>
+                                              
+                                                    <div class="col-sm-3 nopadding">
+                                                        <div class="form-group">
+                                                        <input type="number" step=".01"  class="form-control" id="Automonthlypayment-1" name="Automonthlypayment-1" value="" placeholder="Monthly Payment">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-3 nopadding">
+                                                        <div class="input-group-btn">
+                                                            <button class="btn btn-success" type="button"  onclick="personal_auto_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                                                            </div>
+                                                    </div>
+                            
+                                                        </div>
+
+                                                        <div class="clear">
+            
+                                                        </div>
+                                        </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <label>Revolving</label>
+                                            </div>     
+
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                <div id="personal_revolving_fields">
+                                                    </div>
+
+
+
+                                            <div class="row">
+            
+                                                <div class="col-sm-3 nopadding">
+                                                    <div class="form-group">
+                                                    <input type="number" step=".01"  class="form-control" id="RevolvingOwed-1" name="RevolvingOwed-1" value="" placeholder=" Total Owed">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-3 nopadding">
+                                                    <div class="form-group">
+                                                    <input type="number" step=".01"  class="form-control" id="Revolvingmonthlypayment-1" name="Revolvingmonthlypayment-1" value="" placeholder="Monthly Payment">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3 nopadding">
+                                                    <div class="form-group">
+                                                    <input type="number" step=".01"  class="form-control" id="Revolvingcreditlimit-1" name="Revolvingcreditlimit-1" value="" placeholder="Credit Limit">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-3 nopadding">
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-success" type="button"  onclick="personal_revolving_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                                                        </div>
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="clear">
+            
+                                            </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <label>Education</label>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                <div id="personal_education_fields">
+                                                    </div>
+
+                                            <div class="row">
+            
+                                                <div class="col-sm-3 nopadding">
+                                                    <div class="form-group">
+                                                    <input type="number" step=".01"  class="form-control" id="EducationAmountOwed-1" name="EducationOwed-1" value="" placeholder=" Total Owed">
+                                                    </div>
+                                                </div>
+                                          
+                                                <div class="col-sm-3 nopadding">
+                                                    <div class="form-group">
+                                                    <input type="number" step=".01"  class="form-control" id="Educationmonthlypayment-1" name="Educationmonthlypayment-1" value="" placeholder="Monthly Payment">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3 nopadding">
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-success" type="button"  onclick="personal_education_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                                                        </div>
+                                                </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <label> Personal Bank Statement Information</label>
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                <div id="personal_bank_statement_fields">
+                                      
+                                                   
+                                                    </div>
+                                                    
+                                               
+                                                        
+                                                    
+                                                            <div class="row">
+                                                            <div class="col-sm-3 nopadding">
+                                                          
+                                                                <div class="input-group">
+                                                                    <div class="form-group">
+                                                                    <select class="form-control" id="pBankStementYear-1" name="pBankStementYear-1">
+                                                                    
+                                                                    <option value="">Year</option>
+                                                                    <option value="2015">2015</option>
+                                                                    <option value="2016">2016</option>
+                                                                    <option value="2017">2017</option>
+                                                                    <option value="2018">2018</option>
+                                                                    <option value="2018">2019</option>
+                                                                    <option value="2018">2020</option>
+                                                                    <option value="2018">2021</option>
+                                                                    <option value="2018">2022</option>
+                                                                    <option value="2018">2023</option>
+                                                                    </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                    
+                                                            <div class="col-sm-3 nopadding">
+                                                            
+                                                                <div class="form-group">
+                                                                <div class="input-group">
+                                                                    <select class="form-control" id="pBankStementMonth-1" name="pBankStementMonth-1">
+                                                                    
+                                                                    <option value="">Month</option>
+                                                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                                                    </select>
+                                                                </div>
+                                                                </div>
+                                    </div>       
+                                    
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-success" type="button"  onclick="personal_bank_statement_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                                        </div>
+                                    
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 nopadding">
+                                            <div class="form-group">
+                                            <input type="text" class="form-control" id="PersonalBankName-1" name="PersonalBankName-1" value="" placeholder="Bank Name">
+                                            </div>
+                                        </div>
+                                    <div class="col-sm-3 nopadding">
+                                        <div class="form-group">
+                                        <input type="text" class="form-control" id="PLast4Digits-1" name="PLast4Digits-1" value="" placeholder="Last 4 Digits">
+                                        </div>
+                                    </div>
+                    
+                                    </div>
+                                    
+                                                            <div class="row">
+                                                                <div class="col-sm-3 nopadding">
+                                                                    <div class="form-group">
+                                                                    <input type="number" step=".01"  class="form-control" id="pdeposit-1" name="pdeposit-1" value="" placeholder="Deposit">
+                                                                    </div>
+                                                                </div>
+                                    
+                                                                <div class="col-sm-3 nopadding">
+                                                                    <div class="form-group">
+                                                                    <input type="number" step=".01"  class="form-control" id="pwithdrawal-1" name="pwithdrawal-1" value="" placeholder="With Drawal">
+                                                                    </div>
+                                                                </div>
+                                    
+                                                                <div class="col-sm-3 nopadding">
+                                                                    <div class="form-group">
+                                                                    <input type="number" step=".01"  class="form-control" id="pBalance-1" name="pBalance-1" value="" placeholder="Balance">
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                    
+                                    
+                                    
+                                    
+                                                        
+                                                   
+                                                    <div class="clear">
+            
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                            
+                                          
+                                </div>
+                           
+                         
+
+                          
+                            
+                  
+                       
+
+                            </div>
+
+                           
+                           
+                                    </div>   
+                   
+                        </div>
+                        </div>
+            `;
+        
+            objTo.appendChild(divtest)
+        }
+        function remove_personal_fields(rid) {
+            $('.removeclass'+rid).remove();
+        }
+
+    </script>
+</html>
+
+
